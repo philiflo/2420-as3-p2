@@ -82,8 +82,6 @@ Nginx.conf:
 ```
 sudo mv nginx.conf /etc/nginx/nginx.conf
 ```
-Service-block.conf:
-
 Create the necessary subdirectories - 
 ```
 sudo mkdir /etc/nginx/sites-available
@@ -93,6 +91,11 @@ Then move service-block.conf to the available sites -
 ```
 sudo mv server-block.conf /etc/nginx/sites-available/
 ```
+Once here, you will need to create a symbolic link to the server-block.conf file which is titled sites-enabled. This will allow the syntax inside the nginx.conf file to connect to the server-block.conf file. Execute this command:
+```
+sudo ln -s /etc/nginx/sites-available/server-block.conf /etc/nginx/sites-enabled/
+```
+
 ## 3. Setting up Personal Firewall (UFW)
 
 Once all the files are setup, we can setup our firewall using UFW (uncomplicated firewall). This will effectively create security measures by managing user traffic on our server. 
