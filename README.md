@@ -123,7 +123,17 @@ We can do this through the following command:
 ```
 sudo ufw limit ssh
 ```
-## 4. Execution and Troubleshooting
+To allow port 80 to send traffic through our firewall, (which will allow our load balancer to connect to our droplets), execute the following:
+```
+sudo udw allow 80
+```
+
+## 4. Setting Up a Load Balancer
+
+Once here, we can start the configuration of our load balancer. Most of the configuration will be inside the digital ocean interface.
+
+
+## 5. Execution and Troubleshooting
 
 Once all steps have been executed, we can begin testing to see if all files have been integrated correctly. 
 
