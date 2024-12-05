@@ -2,8 +2,11 @@
 
 Hey new user, this tutorial will help you set up an HTML generator that runs everyday at 5:00 am. This will be ran on 2 different arch linux servers which are distributed by a load balancer which is set up in digital ocean. These websites will be served by nginx and a server block configuration set up. All the necessary files are found in this repo, all you need to do is follow this tutorial to configure your Arch Linux to run the files for success!
 
-Before we start setting up the necessary files, we will need to have 2 droplets up and running on the same project. Ensure that you choose these settings when configuring your droplets: 
+Before we start setting up the necessary files, we will need to have 2 droplets up and running on the same project. Find the most recent qcow arch linux image in the arch wiki (should be 450mb size) and download it. Ensure that you choose these settings when configuring your droplets: 
 
+- Region : San Francisco
+- Datacenter : SF03
+- Choose an Image : Custom Image : Select the downloaded arch linux image
 - 
 
 ## 1. Creating a new System User (Webgen)
