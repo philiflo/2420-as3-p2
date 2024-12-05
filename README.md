@@ -40,6 +40,18 @@ The current repository you are in includes all the necessary files. To access th
 ```
 git clone https://github.com/philiflo/2420-as3.git
 ```
+
+Next we will need to create the files that will be served on our website. To make these files, start by making the directory for them by executing these commands: 
+```
+sudo mkdir /var/lib/webgen/documents
+sudo chown -R webgen:webgen /var/lib/webgen/documents
+```
+Then, execute this command to make the file with a text editor, once open you can enter any information into these files:
+```
+sudo nvim /var/lib/webgen/documents/file-one
+sudo nvim /var/lib/webgen/documents/file-one
+```
+
 ### generate_index
 
 The generate_index script is responsible for generating the html template that will be injected into the index.html file, which we will be calling to create our website. 
@@ -193,7 +205,7 @@ We can check more specific journal logs through:
 sudo journalctl -u generate-index.service
 sudo journalctl -u generate-index.timer
 ```
-***Lastly, we can test to see if our firewall is up and running through:***
+***Next, we can test to see if our firewall is up and running through:***
 ```
 sudo ufw status verbose
 ```
@@ -208,6 +220,11 @@ To                         Action      From
 22/tcp (v6)                ALLOW IN    Anywhere (v6)
 ```
 
+Lastly, to check that our load balancer is running, type the following into a web browser:
+http://<your-load-balancer-ip
+http://<your-load-balancer-ip/documents
+
+To ensure that it is serving everything correctly, reload your page at each of these ips, the page should change its information slightly. This is how you know that your load balancer is serving both of your websites.
 
 
 
