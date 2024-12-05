@@ -174,13 +174,22 @@ First lets check if the website executes correctly:
 sudo nginx -t
 sudo systemctl reload nginx
 ```
+Then, to start nginx on boot:
+```
+sudo systemctl enable nginx
+```
+Then, to start it at this moment for testing:
+```
+sudo systemctl start nginx
+```
+
 In a new browser tab, paste the following to ensure the website has the correct information -
 
-http://<your-ip>/
+http://*your-ip*/
 
 and
 
-http://<your-ip>/documents
+http://*your-ip*/documents
 
 The website will include system information such as the version of your OS and the current date if it has been executed correctly. 
 
@@ -228,4 +237,4 @@ To ensure that it is serving everything correctly, reload your page at each of t
 
 
 
-Once you have ensured all steps have been properly troubleshot, you will have successfully completed this tutorial!
+#### Once you have ensured all steps have been properly troubleshot, you will have successfully completed this tutorial!
