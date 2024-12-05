@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Generate Web Index Daily 5 AM
+
+[Timer]
+OnCalendar=*-*-* 05:00:00
+Unit=generate-index.service
+
+[Install]
+WantedBy=timers.target
+
+
