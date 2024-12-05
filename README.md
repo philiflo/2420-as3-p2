@@ -91,10 +91,11 @@ Then move service-block.conf to the available sites -
 ```
 sudo mv server-block.conf /etc/nginx/sites-available/
 ```
-Once here, you will need to create a symbolic link to the server-block.conf file which is titled sites-enabled. This will allow the syntax inside the nginx.conf file to connect to the server-block.conf file. Execute this command:
+Once here, we will need to make some modifications to allow these configuration files to run on our servers. You will need to create a symbolic link to the server-block.conf file which is titled sites-enabled. This will allow the syntax inside the nginx.conf file to connect to the server-block.conf file. Execute this command:
 ```
 sudo ln -s /etc/nginx/sites-available/server-block.conf /etc/nginx/sites-enabled/
 ```
+Next, inside the server-block.conf file, find line which that says 'server_name' and change the ip to the ip of your server. Once here your server block will be catered towards your servers.
 
 ## 3. Setting up Personal Firewall (UFW)
 
