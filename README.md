@@ -133,6 +133,23 @@ sudo udw allow 80
 
 Once here, we can start the configuration of our load balancer. Most of the configuration will be inside the digital ocean interface.
 
+Inside your project where your 2 droplets are located, navigate to the create button at the top right and click load balancer in the drop menu. 
+
+Choose the following settings for your configuration:
+- Load balancer type : Regional
+- Datacenter region : San Francisco 3
+- Network visibility : External
+- Number of nodes : 2
+- Forwarding rules : HTTP (protocol) 80 (port) for Load Balancer and Droplet
+- Select project : Your project
+Once then your can create your new load balancer.
+
+Go inside your project and navigate to the right side of both of your droplets, select edit tags. Once here, enter a tag that will be used for both of your droplets to connect to your load balancer. For my project I chose 'web'.
+
+Next, click the name of your load balancer to go into its settings. On the right, click edit tags and enter the tag that you entered in your droplets.
+
+Once then, your load balancer will be connected to your 2 droplets.
+
 
 ## 5. Execution and Troubleshooting
 
@@ -147,9 +164,13 @@ sudo systemctl reload nginx
 ```
 In a new browser tab, paste the following to ensure the website has the correct information -
 
-http://164.90.146.179/
+http://<your-ip>/
 
-This ip address is defined in the service-block.conf file as the ip for this website. The website will include system information such as the version of your OS and the current date if it has been executed correctly. 
+and
+
+http://<your-ip>/documents
+
+The website will include system information such as the version of your OS and the current date if it has been executed correctly. 
 
 ***We can then test if the timer and service files have been executed properly with the following commands:***
 
@@ -186,5 +207,8 @@ To                         Action      From
 80/tcp (v6)                ALLOW IN    Anywhere (v6)
 22/tcp (v6)                ALLOW IN    Anywhere (v6)
 ```
+
+
+
 
 Once you have ensured all steps have been properly troubleshot, you will have successfully completed this tutorial!
